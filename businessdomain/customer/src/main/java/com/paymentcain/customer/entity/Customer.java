@@ -3,6 +3,7 @@ package com.paymentcain.customer.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +22,7 @@ public class Customer implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String idCustomer;
+    private long idCustomer;
     
     private String code;
      
@@ -37,7 +38,7 @@ public class Customer implements Serializable{
     
     
     //cascade= CascadeType.All
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer", orphanRemoval = true,cascade= CascadeType.ALL)
     private List<CustomerProducto> products;
     
     @Transient

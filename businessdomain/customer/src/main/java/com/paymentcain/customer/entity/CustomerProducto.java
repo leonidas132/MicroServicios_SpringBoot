@@ -9,14 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import lombok.Data;
 
 @Entity
 @Data
-class CustomerProducto implements Serializable{
+public class CustomerProducto implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idCustomerProduct;
